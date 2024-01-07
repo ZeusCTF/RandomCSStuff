@@ -13,6 +13,14 @@ def sieve(limit):
     return l
 
 def logPrime(primes):
-    pass
+    diff = 0
+    for prime in primes:
+        log = math.log(prime)
+        estPrime = round(prime + math.log(prime))
+        diff += abs(prime - estPrime)
+        print(f"Prime: {prime}, Esitmate: {estPrime}, Difference: {diff}")
+        print(f"Average difference: {diff / len(primes)}")
 
-print(math.log(11))
+logPrime(sieve(30))
+
+

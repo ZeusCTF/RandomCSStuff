@@ -1,5 +1,3 @@
-import math
-
 def sieve(limit):
     l = []
     is_prime = {i: 'prime' for i in range(2, limit + 1)}
@@ -12,14 +10,7 @@ def sieve(limit):
             l.append(x)
     return l
 
-def logPrime(primes):
-    diff = 0
-    for prime in primes:
-        estPrime = round(prime + math.log(prime))
-        diff += abs(prime - estPrime)
-        print(f"Prime: {prime}, Esitmate: {estPrime}, Difference: {abs(prime - estPrime)}")
-        #print(actual_next_prime)
-    print(f"Average difference: {diff / len(primes)}")
-logPrime(sieve(30))
-
-
+x = sieve(30)
+print(x)
+for i in x:
+    print(i, next(i for i in range(0, 30)))

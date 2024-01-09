@@ -14,11 +14,10 @@ def sieve(limit):
 
 def logPrime(primes):
     diff = 0
-    for prime in primes:
-        estPrime = round(prime + math.log(prime))
-        diff += abs(prime - estPrime)
-        print(f"Prime: {prime}, Esitmate: {estPrime}, Difference: {abs(prime - estPrime)}")
-        #print(actual_next_prime)
+    for currentPrime, nextPrime in zip(primes, primes[1:]):
+        estPrime = round(currentPrime + math.log(currentPrime))
+        diff += abs(nextPrime - estPrime)
+        print(f"Prime: {currentPrime}, Esitmate: {estPrime}, Difference: {abs(nextPrime - estPrime)}")
     print(f"Average difference: {diff / len(primes)}")
 logPrime(sieve(30))
 

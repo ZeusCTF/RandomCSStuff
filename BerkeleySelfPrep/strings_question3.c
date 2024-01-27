@@ -6,9 +6,9 @@ int main() {
     char arr[] = "abcc";
     char *str = "abcc";
 
-    *(arr + 3) = 'd';
+    *(arr + 3) = 'd'; //prints: abcd
     puts(arr);
-    *(str + 3) = 'd';
+    *(str + 3) = 'd'; //causes a runtime error due to a string literal being modified
     puts(str);
 
     return 0;

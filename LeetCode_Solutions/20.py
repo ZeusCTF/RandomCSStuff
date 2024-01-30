@@ -1,12 +1,13 @@
 def main(s):
     stack = []
-    openP = ['(','[','{']
-    closeP = [')',']','}']
+    bracket = {
+        '(':')',
+        '{':'}',
+        '[':']'
+    }
 
-    for parenthesis in s:
-        if parenthesis in openP:
-            stack.append(parenthesis)
-        if 
+    for x in s:
+        if x in bracket:
+            stack.append(x)
         
-
 main('()[]{}')

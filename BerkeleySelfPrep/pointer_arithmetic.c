@@ -7,3 +7,7 @@ char *foo(char *restrict d, const char *restrict s)
     while ((*d_tmp++ = *s_tmp++));
     return d;
 }
+
+/*
+This function copies characters from s_tmp into d_tmp and returns a pointer to the destination
+*/

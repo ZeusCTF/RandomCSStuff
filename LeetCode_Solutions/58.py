@@ -2,13 +2,16 @@ def main(s):
     ans = 0
 
     i = len(s) - 1
-    for letter in s[-1]:
-        while letter == " ":
-            print('space')
-        while letter != " ":
+    while True:
+        while s[i] == " ":
+            i -= 1
+        while s[i] != " ":
             ans += 1
+            i -= 1
         print(ans)
-        return
+        return ans
+        
+
     
 main('luffy is still joyboy    ')
 

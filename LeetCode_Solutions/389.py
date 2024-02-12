@@ -5,8 +5,6 @@ def main(s,t):
         s_val += ord(letter)
     for letter in t:
         t_val += ord(letter)
-    if len(s) > len(t):
-        print(s_val - t_val)
-        print(chr(s_val - t_val))
+    return chr(t_val - s_val)
 
 main("helloy", "hello")

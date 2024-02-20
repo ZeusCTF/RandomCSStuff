@@ -1,25 +1,20 @@
 def main(arr):
     arr.sort()
-    min_dif = abs(arr[1] - arr[0])
     ans = []
-    i = 0
-    j = 1
-
-    while j < len(arr):
-        new_arr = []
-        if abs(arr[j] - arr[i]) == min_dif:
-            new_arr.append(arr[i])
-            new_arr.append(arr[j])
-            ans.append(new_arr)
-        print(i)
-        print(j)
-        print()
-        i += 1
-        j += 1
+    min_dif = 99**99
+    for i in range(1, len(arr)):
+        prev = 1 - i
+        diff = abs(arr[i] - arr[prev])
+        if diff < min_dif:
+            min_dif = diff
+            ans = [[arr[prev],arr[i]]]
+        elif diff == min_dif:
+            ans.append(arr[prev])
+            ans.append(arr[i])
     print(ans)
     
         
 
         
 
-main([1,3,6,10,15])
+main([3,8,-10,23,19,-4,-14,27])

@@ -8,7 +8,6 @@ def main(s):
     ans = False
 
     for i in range(lower,half):
-        print(s[i])
         if s[i] in vowels:
             lcount += 1
 
@@ -16,11 +15,7 @@ def main(s):
         if s[i] in vowels:
             ucount += 1
 
-    print(lcount)
-    print(ucount)
     if lcount == ucount:
         ans = True
 
-    return False
-
-main('book')
+    return ans

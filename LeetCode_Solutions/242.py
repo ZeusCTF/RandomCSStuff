@@ -1,19 +1,19 @@
 def main(s, t):
     ans = False
-    s_val = 0
-    t_val = 0
+    s_chars = {}
+    t_chars = {}
 
-    for letter in s:
-        #s_val += s[letter]
-        print(ord(s[letter]))
+    for char in s:
+        s_chars[char] = 1 + s_chars.get(char, 0)
+
+    for char in t:
+        t_chars[char] = 1 + t_chars.get(char, 0)
     
-    for letter in t:
-        t_val += t[letter]
-    
-    if s_val == t_val:
+    if s_chars == t_chars:
         ans = True
     
     return ans
     
 
 main("anagram", "nagaram")
+

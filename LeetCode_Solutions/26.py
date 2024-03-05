@@ -4,8 +4,8 @@ def main(nums):
         if nums[i - 1] != nums[i]:
             nums[x] = nums[i]
             x += 1
-    print(nums)
-    print(x)
+    return nums
+    return x
 
 
-main([1,1,2])
+main([0,0,1,1,1,2,2,3,3,4])

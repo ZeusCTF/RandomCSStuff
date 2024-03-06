@@ -1,6 +1,10 @@
 def main(nums, val):
-    for i in range(0, len(nums)):
-        if nums[i] == val:
+    i = 0
+    for x in nums:
+        if x != val:
+            nums[i] = x
+            i += 1
+    return i
             
 
 main([2,3,3,2], 3)

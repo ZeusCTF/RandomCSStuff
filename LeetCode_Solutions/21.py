@@ -5,10 +5,10 @@ class ListNode:
         self.val = val
         self.next = next
 def main():
-    head = curr = ListNode()  # The base of our chai
+    head = curr = ListNode()
 
-    while list1 and list2:  # As we brew, we choose the best leaf or spice
-        if list1.val < list2.val:  # Adding l1 into the mix
+    while list1 and list2: 
+        if list1.val < list2.val:
             curr.next = list1
             list1 = list1.next
         else: 

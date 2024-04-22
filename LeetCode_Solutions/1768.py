@@ -4,7 +4,7 @@ def mergeAlternately(word1, word2):
         for i in range(0,min):
             ans += word1[i]
             ans += word2[i]
-        for i in range((min+1), max):
+        for i in range((min), max):
             ans += maxWord[i]
         return ans
     
@@ -15,5 +15,7 @@ def mergeAlternately(word1, word2):
         print(build(len2, len1, word2))
     elif len1 > len2:
         print(build(len1, len2, word1))
+    else:
+        print(build(len1, len2, word1))
 
-mergeAlternately('test', 'cqdvw')
+mergeAlternately('test', 'test')

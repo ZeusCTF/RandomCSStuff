@@ -1,23 +1,15 @@
 def main(image):
+    mid = round(len(image[0]) / 2)
+    
     for arr in image:
-        arr.reverse()
-        for ele in arr:
-            if ele == 1:
-               arr[ele] = 0
-               
-        print(arr)
+        count = -1
+        for i in range(0, mid):
+            last = arr[count]
+            arr[count] = arr[i]
+            arr[i] = last
+            count -= 1
     print(image)
 
-
-
-
-    """
-        for i in arr:
-            if arr[i] == 1:
-                arr[i] = 0
-            elif arr[i] == 0:
-                arr[i] = 1
-    """
    
         
 

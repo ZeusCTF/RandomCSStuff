@@ -1,40 +1,42 @@
 def main(queryIP):
-
-    def ipv4(IP):
-        IP += '.'
-        s = ''
-        for byte in IP:
-            if byte != '.':
-                s += byte
-            else:
-                count += 1
-                if s.isdigit() and int(s) >= 0 and int(s) < 255:
-                    print('valid octet')
-                    print(s)
-                    s = ''
-                else:
-                    print('wack')
-                    return False
         
-            
+    def ipv4(IP):
+        ip = IP.split('.')
+        if len(ip) != 4:
+            return False
+        for octet in ip:
+            if not octet.isdigit() or int(octet) > 255 or str(int(octet)) != octet:
+                return False
+        return True
+        
     def ipv6(IP):
-        pass
 
+        allowed = ['a','b','c','d','e','f','A','B','C','D','E','F','0','1','2','3','4','5','6','7','8','9']
+        ip = IP.split(':')
+
+        if len(ip) != 8:
+            return False
+        
+        for section in ip:
+            if len(section) > 4:
+                return False
+            for char in section:
+                if char not in allowed:
+                    return False
+
+        return True
 
     if '.' in queryIP:
-        ipv4(queryIP)
-    if ':' in queryIP:
-        ipv6(queryIP)
+        if ipv4(queryIP):
+            return "IPv4"
+        else:
+            return "Neither"
+    elif ':' in queryIP:
+        if ipv6(queryIP):
+            return "IPv6"
+        else:
+            return "Neither"
+    else:
+        return "Neither"
 
-
-#main('12c.0.0.1')
-
-def test(ip):
-    ip = ip.split('.')
-    if len(ip) != 4:
-        return False
-    for octet in ip:
-        if octet.isdigit() and octet >= 0 and octet < 255:
-
-
-test("192.168.1.1")
+main('2001:0db8:85a3:0:0:8A2E:0370:7334')

@@ -18,7 +18,7 @@ def main(queryIP):
             return False
         
         for section in ip:
-            if len(section) > 4:
+            if len(section) > 4 or len(section) < 1:
                 return False
             for char in section:
                 if char not in allowed:
@@ -27,16 +27,19 @@ def main(queryIP):
         return True
 
     if '.' in queryIP:
+        
         if ipv4(queryIP):
             return "IPv4"
         else:
             return "Neither"
+        
     elif ':' in queryIP:
         if ipv6(queryIP):
             return "IPv6"
         else:
             return "Neither"
+        
     else:
         return "Neither"
 
-main('2001:0db8:85a3:0:0:8A2E:0370:7334')
+main("2001:db8:85a3:0::8a2E:0370:7334")

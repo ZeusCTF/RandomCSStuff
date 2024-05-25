@@ -1,37 +1,20 @@
 def main(height):
-    mX = 0
     x = 0
-    y = -1
-    size = len(height)
+    y = len(height) - 1
+    water = 0
 
+    if len(height) == 2:
+        return min(height) * 2
 
-
-    def volume(x, y, distance):
-        total = (min(x, y) ** 2) * distance
-
-        print(f"x: {x} y: {y}")
-        print(f"distance: {distance}")
-        print(f"total: {total}")
-        print()
-        return max(x, y) * max(x, y)
-    
-    while x != y:
-        fstep = height[x]
-        lstep = height[y]
-        run = volume(fstep, lstep, (size - x))
-        if run < mX:
-            print(mX)
-            return mX
+    while y >= x:   
+        area = min(height[x], height[y]) * (y - x)
+        if area > water:
+            water = area
         else:
             if height[x] > height[y]:
                 y -= 1
             else:
                 x += 1
-            #print(f"x: {x} y: {y}")
-            mX = run
-
-
-
-
-main([1,8,6,2,5,4,8,3,7])
+                
+main([2,3,4,5,18,17,6])
 

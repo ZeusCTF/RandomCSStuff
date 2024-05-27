@@ -1,6 +1,6 @@
 def main(s):
     t = ''
-    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U', 'y', 'Y']
+    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
     strVowel = []
     count = 0
 
@@ -16,6 +16,10 @@ def main(s):
                 count += 1
             else:
                 t += letter
-    print(t)
+    else:
 
-main("tst")
+        return s
+
+    return t
+
+main("RiQYo")

@@ -1,29 +1,10 @@
 def main(costs, coins):
-    x = 0
-    y = len(costs) - 1
     bars = 0
-    runs = 0
-
-    while coins and x < y:
-        #print(coins)
-        #print(f"pass: {runs}")
-        if costs[x] <= coins:
-            print(x)
-            coins -= costs[x]
+    costs.sort()
+    for price in costs:
+        if price <= coins:
+            coins -= price
             bars += 1
-            x += 1
-        if costs[y] <= coins:
-            print(y)
-            coins -= costs[y]
-            bars += 1
-            y -= 1
-        runs += 1
-    print(bars)
-    
-
-
-
-
-
+    return bars
 
 main([1,3,2,4,1], 7)

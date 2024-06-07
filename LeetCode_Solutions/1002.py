@@ -1,11 +1,9 @@
 def main(words):
-    d = {}
+    import collections
 
-    for char in range(ord('a'), ord('z') + 1):
-        char = chr(char)
-        for word in words:
-            if char in word:
-                d[char] = d.get(char, 0) + word.count(char)
-    print(d)
+    ans=collections.Counter(words[0])
+    for word in words:
+        ans &=collections.Counter(word)
+    return list(ans.elements()) 
 
-main(["bella","label","roller"])
+main(["acabcddd","bcbdbcbd","baddbadb","cbdddcac","aacbcccd","ccccddda","cababaab","addcaccd"])

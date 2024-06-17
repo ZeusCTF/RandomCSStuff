@@ -1,10 +1,12 @@
 def main(numRows):
-    res = []
-    
-    def recur(prev):
-        pass
+    res = [[1]]
 
-    for i in range(len(numRows) + 1):
-        recur()
+    for i in range(numRows - 1):
+        temp = [0] + res[-1] + [0]
+        row = []
+        for j in range(len(res[-1]) + 1):
+            row.append(temp[j] + temp[j + 1])
+        res.append(row)
+    return res
 
 main(3)

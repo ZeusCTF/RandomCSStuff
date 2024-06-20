@@ -1,11 +1,12 @@
 def main(s):
     res = []
+    nums = ['1','2','3','4','5','6','7','8','9','0']
 
     for c in s:
-        if c == '0' or c >= '9' and res:
+        if c in nums:
             res.pop()
         else:
             res.append(c)
-    print(res)
+    print(''.join(res))
 
-main("cb34")
+main("cab34")

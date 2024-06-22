@@ -1,11 +1,9 @@
 def main(nums):
-    x = 2
+    x = 0
     for num in nums:
-        if num ^ x == 0:
-            pass
-        else:
-            x = num
+        x ^= num
     print(x)
         
 
 main([4,1,2,1,2])
+

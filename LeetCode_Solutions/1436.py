@@ -1,8 +1,9 @@
 def main(paths):
-    l = len(paths) + 1
-    res = paths[0][1]
+    map = dict()
+    for i in paths:
+        map[i[0]] = i[1]
+    print(map)
 
-    while res in paths:
         
 
 

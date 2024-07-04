@@ -1,30 +1,16 @@
 def main(nums1, nums2):
-    res = []
-
-    i = {}
-    j = {}
-
-    for num in nums1:
-        if num in i:
-            i[num] += 1
+    nums1.sort()
+    nums2.sort()
+    ans = []
+    i, j = 0, 0
+    n, m = len(nums1), len(nums2)
+    while i < n and j < m:
+        if nums1[i] == nums2[j]:
+            ans.append(nums1[i])
+            i += 1
+            j += 1
+        elif nums1[i] < nums2[j]:
+            i += 1
         else:
-            i[num] = 1
-
-    for num in nums2:
-        if num in j:
-            j[num] += 1
-        else:
-            j[num] = 1
-
-    
-    if len(i) > len(j):
-        for val in j:
-            if val in i:
-                res.append(val)
-    else:
-        for val in i:
-            if val in j:
-                res.append(val)
-            
-        return res
-print(main([4,5,9],[9,4,9,8,4]))
+            j += 1
+    return ans

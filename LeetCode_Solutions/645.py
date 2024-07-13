@@ -1,11 +1,11 @@
 def main(nums):
-    res = []
-
-    nums = sorted(nums)
-    for num in nums:
-        if nums[nums.index(num) + 1] == num:
-            res.append(num)
-            res.append(num + 1)
-            return res
-
-print(main([1,2,2,4]))
+    n=len(nums)
+    temp1=(n*(n+1))//2-sum(nums)
+    temp2=(n*(n+1)*(2*n+1))//6
+    for i in nums:
+        temp2-=i**2
+    temp3=temp2//temp1
+    miss=(temp1+temp3)//2
+    dup=temp3-miss
+    return [dup,miss]
+    

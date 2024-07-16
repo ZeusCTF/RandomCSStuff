@@ -1,9 +1,14 @@
 #include <string.h>
+#include<stdlib.h>
 
 int scoreOfString(char* s) {
     int res = 0;
+    int x = 0;
+    int y = 1;
     size_t i;
 
-    for (i = 0; i < strlen(s); i++) {
-        res += s[i];
+    while (y < strlen(s)) {
+        res += abs(s[x] - s[y]);
+        y++;
+        x++;
 }   return res; }

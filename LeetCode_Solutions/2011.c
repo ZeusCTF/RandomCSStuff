@@ -4,8 +4,10 @@ int finalValueAfterOperations(char** operations, int operationsSize) {
     char str2[] = "++X";
 
     for (int i = 0; i < operationsSize; i++){
-        if () {
+        if (strcmp(operations[i], str1) == 0 || strcmp(operations[i], str2) == 0) {
             res++;
+        } else {
+            res--;
         }
     } return res;
 }

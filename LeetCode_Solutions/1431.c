@@ -3,7 +3,10 @@
  */
 kidsWithCandies(int* candies, int candiesSize, int extraCandies, int* returnSize) {
 
-    int res = malloc(candies[0]);
+    int res = 0;
+    char* t = "true";
+    char* f = "false";
+    int array[candiesSize];
     
   
     for (int i = 0; i < candiesSize; i++) { 
@@ -14,7 +17,9 @@ kidsWithCandies(int* candies, int candiesSize, int extraCandies, int* returnSize
 
     for (int i = 0; i < candiesSize; i++) { 
         if (candies[i] + extraCandies >= res) {
-            
-        }    
-    }
+            array[i] = t;
+        }   else {
+            array[i] = f;
+        }
+    } return array;
 }

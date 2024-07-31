@@ -10,24 +10,10 @@
 #include <math.h>
 
 int guessNumber(int n){
-	int x = n / 2;
-    int y;
+    int lower = 0;
+    int upper = n;
+    int guessednum = round(upper / lower);
 
-    x = round(x);
-    y = guess(x);
-
-
-    while (y != 0) {
-        if (y == -1){
-            x = x / 2;
-            guess(x);
-        } else if (y == 1)
-        {
-            x = (x + n) / 2;
-            guess(x);
-        }
-        
-        
-    }
+    while 
 
 }

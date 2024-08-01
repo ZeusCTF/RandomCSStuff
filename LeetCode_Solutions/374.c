@@ -9,11 +9,22 @@
 
 #include <math.h>
 
-int guessNumber(int n){
+int guessNumber(int n) {
     int lower = 0;
     int upper = n;
     int guessednum = round(upper / lower);
+    int res = guess(guessednum);
 
-    while 
+    while (res != 0) {
 
-}
+        if (res == 1) {
+            lower = guessednum;
+            guessednum = round(upper / lower);
+            res = ges(guessednum);
+        }else if (res == -1) {
+            upper = guessednum;
+            guessednum = round(upper / lower);
+            res = ges(guessednum);
+        }
+    return res;
+}}

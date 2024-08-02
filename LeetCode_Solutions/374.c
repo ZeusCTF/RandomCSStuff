@@ -6,25 +6,27 @@
  *               otherwise return 0
  * int guess(int num);
  */
-
 #include <math.h>
 
+//int guess(int num);
+
 int guessNumber(int n) {
-    int lower = 0;
+    int lower = 1;
     int upper = n;
-    int guessednum = round(upper / lower);
-    int res = guess(guessednum);
+    int guessednum;
+    int res;
 
-    while (res != 0) {
+    while (lower <= upper) {
+        guessednum = lower + (upper - lower) / 2;
+        res = guess(guessednum);
 
-        if (res == 1) {
-            lower = guessednum;
-            guessednum = round(upper / lower);
-            res = ges(guessednum);
-        }else if (res == -1) {
-            upper = guessednum;
-            guessednum = round(upper / lower);
-            res = ges(guessednum);
+        if (res == 0) {
+            return guessednum;
+        } else if (res == 1) {
+            lower = guessednum + 1;
+        } else if (res == -1) {
+            upper = guessednum - 1;
         }
-    return res;
-}}
+    }
+    return -1;
+}

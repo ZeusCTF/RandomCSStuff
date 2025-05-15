@@ -10,6 +10,7 @@ def main(inp):
                 max_count = count
         else:
             count = 0
+            
     print(max_count)
 
         
